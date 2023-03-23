@@ -1,0 +1,15 @@
+body[data-theme="theme-dark"]  {
+  --card-background-color: hsl(209, 23%, 22%);
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: hsl(0, 0%, 100%);
+  --input-color: hsl(0, 0%, 80%);
+  --shadow-color: rgba(255,255,255,0.1);
+}
+
+body[data-theme="theme-light"]  {
+  --card-background-color: hsl(0, 0%, 100%);
+  --background-color: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+  --input-color: hsl(0, 0%, 52%);
+  --shadow-color: rgba(0,0,0,0.1);
+}

@@ -1,0 +1,123 @@
+@use "../util" as u;
+
+.custom-button {
+  background-color: var(--card-background-color);
+  border: none;
+  padding: u.rem(7) u.rem(25);
+  border-radius: 5px;
+  transition: color 200ms, box-shadow 200ms;
+  @include u.shadow-button;
+  span {
+    margin-right: u.rem(10);
+    font-weight: 800;
+  }
+  &:hover {
+    color: var(--text-color);
+    @include u.shadow-button(true);
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+.country-details {
+
+  &__content {
+    margin-top: u.rem(50);
+    display: flex;
+    @include u.breakpoint-down("small") {
+      flex-direction: column;
+      padding-inline: u.rem(20);
+    }
+  }
+}
+
+.flag-wrap {
+  display: flex;
+  justify-content: center;
+  margin-right: u.rem(40);
+  @include u.breakpoint("medium") {
+    width: 50%;
+  }
+  img {
+    object-fit: contain;
+    height: 100%;
+    max-width: 100%;
+  }
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include u.breakpoint("medium") {
+    width: 50%;
+  }
+  @include u.breakpoint("large"){
+    margin-left: u.rem(20);
+  }
+  @include u.breakpoint("xlarge") {
+    margin-left: u.rem(40);
+  }
+  .category {
+    font-weight: 600;
+  }
+  &__title {
+    font-size: clamp(u.rem(20),u.rem(16) + 1.25vw, u.rem(30));
+    margin-bottom: u.rem(20);
+    @include u.breakpoint-down("small") {
+      font-size: u.fontVW(40);
+      margin-top: u.rem(40);
+    }
+  }
+  &__content{
+    line-height: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    * {
+      font-size: clamp(u.rem(10),u.rem(8) + 0.5vw, u.rem(20));
+      @include u.breakpoint-down("small") {
+        font-size: u.fontVW(25);
+      }
+    }
+  }
+  &__firstCol {
+    margin-right: u.rem(10);
+    @include u.breakpoint-down("small") {
+      flex-basis: 100%;
+    }
+  }
+  &__secCol {
+    margin-right: u.rem(10);
+    @include u.breakpoint-down("small") {
+      margin-top: u.rem(40);
+    }
+  }
+  &__borders {
+    margin-top: u.rem(40);
+    flex-basis: 100%;
+    button {
+      margin-right: u.rem(7.5);
+      margin-top: u.rem(5);
+      font-size: clamp(u.rem(10),u.rem(8) + 0.5vw, u.rem(20));
+      @include u.breakpoint-down("small") {
+        font-size: u.fontVW(25);
+      }
+    }
+    @include u.breakpoint-down("small") {
+      margin-bottom: u.rem(50);
+    }
+  }
+}

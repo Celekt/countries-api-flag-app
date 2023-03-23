@@ -1,0 +1,139 @@
+@use "../util" as u;
+@use "sass:color";
+
+.filters {
+  @include u.breakpoint("medium") {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include u.breakpoint-down("small") {
+    padding-inline: u.rem(75);
+  }
+}
+
+.select-wrap {
+  @include u.breakpoint-down("small") {
+    margin-top: u.rem(20);
+  }
+  select {
+    @include u.shadow-filter;
+    border-radius: u.rem(5);
+    padding: u.rem(15);
+    padding-right: u.rem(50);
+    appearance: none;
+  }
+
+  &::after {
+    display: inline-block;
+    position: relative;
+    left: u.rem(-25);
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--input-color);
+    transform: rotate(180deg) translateY(50%);
+  }
+}
+
+.search-bar {
+  @include u.shadow-filter;
+  display: flex;
+  align-items: center;
+  //flex-basis: content;
+  padding: u.rem(15) u.rem(10);
+  background-color: var(--card-background-color);
+  width: 100%;
+  @include u.breakpoint("medium") {
+    width: 40%;
+  }
+  border-radius: u.rem(5);
+
+  .search-icon {
+    width: u.rem(16);
+    height: u.rem(16);
+    margin-inline: u.rem(15);
+  }
+  input {
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: u.rem(50);
+  grid-row-gap: u.rem(50);
+  @include u.breakpoint-down("large") {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: u.rem(40);
+    grid-row-gap: u.rem(40);
+  }
+  @include u.breakpoint-down("medium") {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: u.rem(30);
+    grid-row-gap: u.rem(30);
+  }
+  @include u.breakpoint-down("small") {
+    grid-template-columns: 1fr;
+    place-items: center;
+    grid-column-gap: 0;
+  }
+
+  margin-top: u.rem(30);
+}
+
+.card {
+  @include u.shadow-card;
+  background-color: var(--card-background-color);
+  border-radius: u.rem(5);
+  overflow: hidden;
+  transition: transform 200ms ease-in-out;
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+  &__header {
+    margin-inline: auto;
+    height: 180px;
+    @include u.breakpoint-down("small") {
+      height: 48vw;
+      width: 72vw;
+    }
+  }
+  &__footer{
+    padding: u.rem(20);
+  }
+}
+
+.country-stats {
+  margin-top: u.rem(10);
+
+  .category {
+    font-weight: 600;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

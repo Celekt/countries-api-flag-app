@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if(not math.is-unitless($pixel))
+  {
+    @error "Don't use units when using the rem() function; only numbers"
+  }
+  @else {
+    @return math.div($pixel, 16) + rem;
+  }
+}
+
+@function em($pixel) {
+  @if(not math.is-unitless($pixel))
+  {
+    @error "Don't use units when using the em() function; only numbers"
+  }
+  @else {
+    @return math.div($pixel, 16) + em;
+  }
+}
+
+@function fontVW($pixel) {
+  @return math.div($pixel, 8.5) + vw;
+}

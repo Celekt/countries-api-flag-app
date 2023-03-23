@@ -1,0 +1,16 @@
+
+
+@mixin shadow-filter {
+  box-shadow: 3px 3px 3px var(--shadow-color);
+}
+
+@mixin shadow-card {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+}
+
+@mixin shadow-button($darker: false) {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 40%);
+  @if $darker {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 70%);
+  }
+}

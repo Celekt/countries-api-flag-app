@@ -1,0 +1,12 @@
+@forward "list";
+@forward "header";
+@forward "country";
+@use "../util" as u;
+
+.main-content {
+  position: relative;
+  padding: u.rem(30) u.rem(50);
+  @include u.breakpoint-down("small") {
+    padding: u.rem(20);
+  }
+}

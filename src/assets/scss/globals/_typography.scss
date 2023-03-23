@@ -1,0 +1,58 @@
+@use "../util" as u;
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+  }
+}
+
+h1 {
+  font-size: clamp(u.rem(28),u.rem(16) + 2vw, u.rem(40));
+}
+
+h2 {
+  font-size: clamp(u.rem(22), u.rem(16) + 1.5vw, u.rem(36));
+}
+
+p {
+  margin: 0;
+  font-size: u.rem(16);
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+.font-xxs {
+  font-size: u.rem(10);
+}
+
+.font-xs {
+  font-size: u.rem(13);
+}
+
+.font-small {
+  font-size: u.rem(16);
+}
+
+.font-medium {
+  font-size: u.rem(19);
+}
+
+.font-large {
+  font-size: u.rem(22);
+}
+
+button {
+  color: var(--input-color);
+}
+
+
+
+
+
+
+
+
